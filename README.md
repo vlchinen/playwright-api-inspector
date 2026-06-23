@@ -2,114 +2,86 @@
 
 ![Playwright Tests](https://github.com/vlchinen/playwright-api-inspector/actions/workflows/playwright.yml/badge.svg)
 
-A test automation framework built with **Playwright** for API and UI testing.
+A modern test automation framework using **Playwright** for both **API Testing** and **UI Testing**.
 
-The project demonstrates automated testing practices including REST API validation, browser automation, Page Object Model (POM), cross-browser execution, and GitHub Actions CI/CD integration.
+This project demonstrates best practices in automation testing including Page Object Model (POM), API validation, UI automation, and CI/CD integration with GitHub Actions.
 
 ---
 
 ## Tech Stack
 
-- Node.js
-- JavaScript
-- Playwright
-- Playwright Test Runner
-- GitHub Actions CI/CD
+- **Node.js**
+- **JavaScript**
+- **Playwright** (Latest)
+- **Playwright Test Runner**
+- **GitHub Actions** (CI/CD)
 
 ---
 
 ## Project Structure
 
-```
-playwright-api-inspector/
-│
-├── pages/
-│ └── LoginPage.js # Page Object Model classes
-│
-├── test/
-│ ├── api/
-│ │ └── products.spec.js # API automation tests
-│ │
-│ └── ui/
-│ └── login.spec.js # UI automation tests
-│
-├── playwright.config.js # Test configuration
-├── package.json
-└── README.md
-```
-
----
-
-## Features
-
-### API Automation
-
-- REST API request testing
-- HTTP status code validation
-- JSON response validation
-- API response data assertions
-
-### UI Automation
-
-- Browser-based UI testing
-- Page Object Model (POM) architecture
-- User flow automation
-- Element validation
-
-### Test Execution
-
-- Chromium testing
-- Firefox testing
-- Parallel test execution
-- HTML test reporting
-
-### CI/CD
-
-- Automated test execution using GitHub Actions
-- Test runs triggered on every push
-- Cross-browser validation in CI environment
-
----
-
-## Installation
-
-Clone repository:
-
 ```bash
-git clone git@github.com:vlchinen/playwright-api-inspector.git
+playwright-api-inspector/
+├── .github/
+│   └── workflows/
+│       └── playwright.yml          # GitHub Actions CI
+├── pages/                          # Page Object Model
+│   └── LoginPage.js
+├── test/
+│   ├── api/                        # API tests
+│   │   └── *.spec.js
+│   └── ui/                         # UI tests
+│       └── *.spec.js
+├── playwright.config.js
+├── package.json
+├── package-lock.json
+└── README.md
 
-Install dependencies:
-```
+Features
+
+API Testing: Request validation, status code, response body checking
+UI Testing: Browser automation, user flows, assertions
+Page Object Model (POM): Clean and maintainable test code
+Cross-browser: Support Chrome, Firefox, WebKit
+CI/CD: Automated testing on every push using GitHub Actions
+Reporting: HTML report with screenshots, video, trace on failure
+
+
+Installation
+# Clone repo
+git clone https://github.com/vlchinen/playwright-api-inspector.git
+
+# Go to project folder
+cd playwright-api-inspector
+
+# Install dependencies
 npm install
-```
-Install Playwright browsers:
-```
+
+# Install Playwright browsers
 npx playwright install
-```
-*** TEST
-Run all tests:
-```
+
+
+# Run all tests
 npm test
-```
-Run API tests only:
-```
+
+# Run only API tests
 npx playwright test test/api
-```
-Run UI tests only:
-```
+
+# Run only UI tests
 npx playwright test test/ui
-```
-Run tests with specific browser:
-```
+
+# Run with specific browser
 npx playwright test --project=chromium
-```
-***Test Report
 
-Generate HTML report:
-```
+# Run in headed mode (see browser)
+npx playwright test --headed
+
+# View HTML report
 npx playwright show-report
-```
 
-***Author
 
-Created as an automation testing framework project to demonstrate modern QA automation practices using Playwright.
+Author
+vlchinen
+Automation Testing Practice Project using Playwright.
+
+Created for learning and job application purposes.
