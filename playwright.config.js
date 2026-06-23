@@ -14,5 +14,9 @@ module.exports = defineConfig({
     },
   ],
 
-    workers: 6
+  use: {
+    screenshot: 'only-on-failure',
+    trace: 'retain-on-failure',
+    video: 'retain-on-failure'
+  }
 });

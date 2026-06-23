@@ -28,7 +28,9 @@ test('user can login successfully', async ({page})=>{
 
 
     await expect(loginPage.inventoryTitle)
-        .toHaveText('Ahihi');
+    .toBeVisible();
 
+    await expect(loginPage.inventoryTitle)
+        .toHaveText('Products');
 
 });
