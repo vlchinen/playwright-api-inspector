@@ -21,6 +21,9 @@ class LoginPage {
         this.inventoryTitle =
             page.locator('.title');
 
+        this.inventoryName =
+            page.locator('.inventory_item_name');
+
     }
 
 

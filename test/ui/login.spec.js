@@ -33,4 +33,7 @@ test('user can login successfully', async ({page})=>{
     await expect(loginPage.inventoryTitle)
         .toHaveText('Products');
 
+    await expect(loginPage.inventoryName.first())
+        .toHaveText('Sauce Labs Backpack') 
+
 });
