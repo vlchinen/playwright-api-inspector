@@ -1,31 +1,16 @@
 class LoginPage {
 
-
     constructor(page){
 
         this.page = page;
 
+        this.usernameInput = page.locator('#user-name');
 
-        this.usernameInput =
-            page.locator('#user-name');
+        this.passwordInput = page.locator('#password');
 
-
-        this.passwordInput =
-            page.locator('#password');
-
-
-        this.loginButton =
-            page.locator('#login-button');
-
-
-        this.inventoryTitle =
-            page.locator('.title');
-
-        this.inventoryName =
-            page.locator('.inventory_item_name');
+        this.loginButton = page.locator('#login-button');
 
     }
-
 
 
     async goto(){
@@ -37,8 +22,7 @@ class LoginPage {
     }
 
 
-
-    async login(username,password){
+    async login(username, password){
 
         await this.usernameInput.fill(username);
 
@@ -47,7 +31,6 @@ class LoginPage {
         await this.loginButton.click();
 
     }
-
 
 }
 

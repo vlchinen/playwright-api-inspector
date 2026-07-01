@@ -4,10 +4,9 @@ const LoginPage = require('../../pages/LoginPage');
 const InventoryPage = require('../../pages/InventoryPage');
 
 
-test('logout successfully', async ({page}) => {
+test('User can add product to cart', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
-
     const inventoryPage = new InventoryPage(page);
 
 
@@ -19,14 +18,12 @@ test('logout successfully', async ({page}) => {
     );
 
 
-    await expect(inventoryPage.inventoryTitle)
-        .toHaveText('Products');
+    await inventoryPage.addProduct(
+        'Sauce Labs Backpack'
+    );
 
 
-    await inventoryPage.logout();
-
-
-    await expect(page)
-        .toHaveURL(/saucedemo.com/);
+    await expect(inventoryPage.cartBadge)
+        .toHaveText('1');
 
 });
