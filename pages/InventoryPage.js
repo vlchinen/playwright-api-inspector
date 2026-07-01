@@ -13,6 +13,8 @@ class InventoryPage {
         this.inventoryTitle = page.locator('.title');
 
         this.cartBadge = page.locator('.shopping_cart_badge');
+
+        this.cartLink = page.locator('.shopping_cart_link');
         
     }
 
@@ -37,6 +39,12 @@ class InventoryPage {
         await this.page
             .locator('.shopping_cart_link')
             .click();
+
+    }
+
+    async openCart(){
+
+        await this.cartLink.click();
 
     }
 
